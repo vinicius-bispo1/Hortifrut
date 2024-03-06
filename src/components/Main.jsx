@@ -13,6 +13,7 @@ import { useState } from "react"
 export default function Main() {
 
     const [item, setItem] = useState(carrinho)
+    const [frase, setFrase] = useState("Click no produto para colocar no carrinho")
     const [numero, setNumero] = useState(null)
 
     const sub = () => {
@@ -29,20 +30,20 @@ export default function Main() {
         </S.BoxOne>
           <S.Boxtwo>
             <S.BoxItem>
-                <img onClick={()=>{setItem(alface)}} src={alface} alt="" />
-                <img onClick={()=>{setItem(laranja)}} src={laranja} alt="" />
-                <img onClick={()=>{setItem(cereja)}} src={cereja} alt="" />
-                <img onClick={()=>{setItem(cenoura)}} src={cenoura} alt="" />
-                <img onClick={()=>{setItem(manga)}} src={manga} alt="" />
-                <img onClick={()=>{setItem(limao)}} src={limao} alt="" />
-                <img onClick={()=>{setItem(beterraba)}} src={beterraba} alt="" />
-                <img onClick={()=>{setItem(tomate)}} src={tomate} alt="" />
+                <img onClick={()=>{setItem(alface),setFrase("R$: 3,00")}} src={alface} alt="imagem de uma alface" />
+                <img onClick={()=>{setItem(laranja),setFrase("R$: 5,00")}} src={laranja} alt="imagem de uma laranja" />
+                <img onClick={()=>{setItem(cereja),setFrase("R$: 10,00")}} src={cereja} alt="imagem de uma cereja" />
+                <img onClick={()=>{setItem(cenoura),setFrase("R$: 3,00")}} src={cenoura} alt="imagem de uma cenoura" />
+                <img onClick={()=>{setItem(manga),setFrase("R$: 6,00")}} src={manga} alt="imagem de uma manga" />
+                <img onClick={()=>{setItem(limao),setFrase("R$: 2,00")}} src={limao} alt="imagem de um limão" />
+                <img onClick={()=>{setItem(beterraba),setFrase("R$: 4,00")}} src={beterraba} alt="imagem de uma beterraba" />
+                <img onClick={()=>{setItem(tomate),setFrase("R$: 7,00")}} src={tomate} alt="imagem de um tomate" />
             </S.BoxItem>
             <S.Ancora>
                 <S.Carrinho>
                 <S.SecondCarrinho>
                     <img src={item} alt="carrinho de compras" />
-                    <h3>Click no produto para colocar no carriho</h3>
+                    <h3>{frase}</h3>
                     <h4>{numero}</h4>
                 </S.SecondCarrinho>
                 <S.MaisEmenos>
